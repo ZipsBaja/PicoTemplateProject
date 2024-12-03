@@ -1,0 +1,3 @@
+[submodule "lib/ZipsPicoLib"]
+	path = lib/ZipsPicoLib
+	url = https://github.com/ZipsBaja/ZipsPicoLib
