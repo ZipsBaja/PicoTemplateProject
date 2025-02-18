@@ -1,3 +1,4 @@
+#define USING_PRINT 1
 #include <ZipsLib.h>
 
 int main()
