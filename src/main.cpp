@@ -4,8 +4,13 @@
 int main()
 {
     init_libs();
+    BEGIN_SETUP();
 
-    printf("Hello Akron!");
+    while (1)
+    {
+        sleep_ms(1000);
+        LOG("Hello Akron!");
+    }
 
     return 0;
 }
