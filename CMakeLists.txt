@@ -39,7 +39,7 @@ pico_sdk_init()
 add_subdirectory(lib/ZipsPicoLib)
 
 # Be sure to add any other .c or .cpp files if needed.
-add_executable(${CMAKE_PROJECT_NAME} src/main.cpp)
+add_executable(${CMAKE_PROJECT_NAME} src/main.c)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
     pico_stdlib
