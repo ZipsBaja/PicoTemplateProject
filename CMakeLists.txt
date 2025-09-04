@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.50)
 
 # Using C11 and C++17 by default.
 set(CMAKE_C_STANDARD 11)
