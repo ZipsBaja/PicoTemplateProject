@@ -29,10 +29,30 @@ set(PICO_PLATFORM rp2350)
 set(PICO_LABEL RP2350)
 endif()
 
+# Enable and disable features here.
+option(USING_PRINT "Enable printing to stdout. Use this while testing and debugging." ON) # Switch to OFF when project is complete.
+option(USING_MULTICORE "Enable use of the Pico's second core. Enable this for parallel processing or separate tasks." OFF)
+
+# Add theses definitions to your IDE.
+if (USING_PRINT)    
+add_compile_definitions(USING_PRINT=1)
+set(USE_PRINT_CMAKE 1)
+else()
+set(USE_PRINT_CMAKE 0)
+endif()
+if (USING_MULTICORE)
+add_compile_definitions(USING_MULTICORE=1)
+set(USE_MULTICORE_CMAKE 1)
+else()
+set(USE_MULTICORE_CMAKE 0)
+endif()
+
 include($ENV{PICO_SDK_PATH}/pico_sdk_init.cmake)
 
 # Change the first argument with your project name!
 project(ExampleProject C CXX ASM)
+
+set(PICO_CXX_ENABLE_RTTI 1)
 
 pico_sdk_init()
 
