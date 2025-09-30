@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.50)
+cmake_minimum_required(VERSION 3.5)
 
-# Using C11 and C++17 by default.
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
+# Using C17 and C++20 by default.
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # Comment these lines accordingly based on the board you are using!
 set(PICO_BOARD pico)
