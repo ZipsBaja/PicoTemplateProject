@@ -31,7 +31,7 @@ endif()
 
 # Enable and disable features here.
 option(USING_PRINT "Enable printing to stdout. Use this while testing and debugging." ON) # Switch to OFF when project is complete.
-option(USING_MULTICORE "Enable use of the Pico's second core. Enable this for parallel processing or separate tasks." OFF)
+option(USING_MULTICORE "Enable use of the Pico's second core. Enable this for parallel processing or separate tasks." ON) # Switch to OFF if this is a very simple barebones project.
 
 # Add theses definitions to your IDE.
 if (USING_PRINT)    
@@ -59,10 +59,11 @@ pico_sdk_init()
 add_subdirectory(lib/ZipsPicoLib)
 
 # Be sure to add any other .c or .cpp files if needed.
-add_executable(${CMAKE_PROJECT_NAME} src/main.c)
+add_executable(${CMAKE_PROJECT_NAME} src/main.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}
     pico_stdlib
+    pico_multicore
     ZipsPicoLib
 )
 
