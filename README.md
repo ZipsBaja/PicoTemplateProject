@@ -9,7 +9,7 @@ git clone https://github.com/ZipsBaja/PicoTemplateProject.git
 ```
 and update the submodules with the following:
 ```
-git submodule init && git submodule update
+git submodule update --init --remote --recursive
 ```
 By default, the standard RP2040 Pico is selected, and if you are using the Pico W, Pico 2, or Pico 2 W, you'll need to swap lines in the `CMakeLists.txt` file.
 
@@ -30,7 +30,7 @@ cd build
 cmake ..
 make
 ```
-If you are compiling many items, use the `-jx` option in `make` to allocate more processor threads, where `x` is the number of threads. For the fastest compile time for your system, use `make -j$(nproc)`. 
+If you are compiling many items, use the `-jx` option in `make` to allocate more processor threads, where `x` is the number of threads. For the fastest compile time for your system, use `make -j$(nproc)` or simply `make -j`. 
 ### I/O
 ---
 Upon building the project with CMake, two script files will be generated. The first is `flash.sh`, used to automatically mount the Pico board and copy the binary UF2 file, and the second script `tty.sh` is used to connect to the board's serial output. You can flash manually instead if you like, but it requires a manual mount and copy. These two scripts require root access because of device look-up tables and mount procedures.
