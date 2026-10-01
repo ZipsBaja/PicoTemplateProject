@@ -2,10 +2,8 @@
 
 int main()
 {
-    init_libs();
-    BEGIN_SETUP();
+    stdio_init_all();
 
-    BEGIN_LOOP();
     while (1)
     {
         sleep_ms(1000);
